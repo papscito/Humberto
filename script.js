@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    console.log('https://raw.githubusercontent.com/cAndresDev/Humberto/master/WhatsApp%20Image%202024-05-21%20at%2010.59.12%20PM.jpeg');
     const question = document.getElementById('question');
     const buttons = document.getElementById('buttons');
     const showQuestionBtn = document.getElementById('showQuestionBtn');
@@ -120,4 +121,3 @@ buttonNo.addEventListener('click', function () {
 });
 
 
-console.log("https://github.com/cAndresDev/Humberto/blob/master/WhatsApp%20Image%202024-05-21%20at%2010.59.12%20PM.jpeg")
