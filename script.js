@@ -5,6 +5,28 @@ document.addEventListener('DOMContentLoaded', function () {
     const showQuestionBtn = document.getElementById('showQuestionBtn');
     const content = document.getElementById('content');
 
+    const animationContainer = document.getElementById("animationContainer");
+
+    // Configura la animación
+    const animation = lottie.loadAnimation({
+        container: animationContainer,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "./Animation - 1716361257666.json" // Ruta a tu archivo JSON de animación descargado de LottieFiles
+    });
+
+    animation.setSpeed(.5); // Establece la velocidad de la animación
+
+    // Haz que la animación ocupe toda la pantalla
+    animationContainer.style.width = "100vw";
+    animationContainer.style.height = "100vh";
+    animationContainer.style.overflow = "hidden";
+    animationContainer.style.position = "fixed";
+    animationContainer.style.top = "0";
+    animationContainer.style.left = "0";
+
+
     // Mostrar la pregunta con un efecto de aparición
     setTimeout(function () {
         question.classList.add('appear');

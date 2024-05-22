@@ -159,3 +159,7 @@ body {
 #content.fade-out {
     opacity: 0;
 }
+
+#animationContainer{
+    opacity: .2;
+}
