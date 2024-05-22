@@ -4,23 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Preguntas</title>
-    <style>
-        .hidden {
-            display: none;
-        }
-        #question {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
-        #buttons {
-            display: flex;
-            gap: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div id="content">
-        <div id="question">¿Cuál es tu pregunta?</div>
+        <div id="question">Espacio para la pregunta de este wey</div>
         <div id="buttons" class="hidden">
             <button id="yesBtn">Sí</button>
             <button id="noBtn">No</button>
@@ -28,26 +16,7 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const question = document.getElementById('question');
-            const buttons = document.getElementById('buttons');
-            const showQuestionBtn = document.getElementById('showQuestionBtn');
 
-            setTimeout(function() {
-                question.classList.add('hidden');
-                buttons.classList.remove('hidden');
-            }, 5000); // 5 segundos antes de ocultar la pregunta y mostrar los botones
-
-            showQuestionBtn.addEventListener('click', function() {
-                question.classList.remove('hidden');
-                buttons.classList.add('hidden');
-                setTimeout(function() {
-                    question.classList.add('hidden');
-                    buttons.classList.remove('hidden');
-                }, 5000); // 5 segundos antes de ocultar la pregunta nuevamente
-            });
-        });
-    </script>
+    <script src="./script.js"></script>
 </body>
 </html>
