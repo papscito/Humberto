@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     content.classList.add('appear');
                 }, 100);
 
-                    content.classList.remove('appear');
+                content.classList.remove('appear');
 
 
             }, 2000); // Espera a que la transición de opacidad termine
@@ -52,13 +52,37 @@ document.addEventListener('DOMContentLoaded', function () {
                     }, 100);
 
                     content.classList.remove('appear');
-    
-    
+
+
                 }, 2000); // Espera a que la transición de opacidad termine
 
             }, 2000); // 2 segundos antes de desvanecer la pregunta nuevamente
         }, 100); // Comienza casi inmediatamente
     });
+
+
+
+    let buttonYes = document.getElementById('yesBtn');
+    let response = document.getElementById('response');
+
+    buttonYes.addEventListener('click', function () {
+        content.classList.add('fade-out');
+    
+        setTimeout(function () {
+            content.style.display = 'none';
+            content.classList.remove('fade-out');
+    
+            response.classList.remove('hidden');
+            response.style.opacity = 0;
+    
+            setTimeout(function () {
+                response.style.opacity = 1;
+            }, 100); // Comienza casi inmediatamente
+        }, 1000); // Espera a que la transición de opacidad termine
+    });
+    
+
+
 });
 
 
@@ -72,25 +96,27 @@ let noWidth = 50;
 let yesWidth = 50;
 
 buttonNo.addEventListener('click', function () {
-   
-       numero = Math.floor(Math.random() * 15+10);
 
-        noWidth -= numero;
-        yesWidth += numero;
+    numero = Math.floor(Math.random() * 15 + 10);
 
-        buttonNo.style.width = `${noWidth}%`;
-        buttonYes.style.width = `${yesWidth}%`;
+    noWidth -= numero;
+    yesWidth += numero;
 
-        //transition with
+    buttonNo.style.width = `${noWidth}%`;
+    buttonYes.style.width = `${yesWidth}%`;
 
-        buttonNo.style.transition = 'width 0.5s ease';
-        buttonYes.style.transition = 'width 0.5s ease';
+    //transition with
 
-        if (noWidth <= 8) {
-            buttonNo.style.display = 'none'; // Ocultar el botón "No" cuando su ancho llegue a 0
-        }
+    buttonNo.style.transition = 'width 0.5s ease';
+    buttonYes.style.transition = 'width 0.5s ease';
 
-        if (yesWidth > 100) {
-            buttonYes.style.width = `100%`;
-        }
-    });
+    if (noWidth <= 8) {
+        buttonNo.style.display = 'none'; // Ocultar el botón "No" cuando su ancho llegue a 0
+    }
+
+    if (yesWidth > 100) {
+        buttonYes.style.width = `100%`;
+    }
+});
+
+

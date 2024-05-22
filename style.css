@@ -69,6 +69,7 @@ body {
 
 
 
+
 #yesBtn,
 #noBtn {
     display: flex;
@@ -131,4 +132,30 @@ body {
     text-decoration: underline;
     z-index: 1000;
     transition: background-color 0.3s;
+}
+
+
+#response {
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+#response.appear {
+    opacity: 1;
+}
+
+#response.fade-out {
+    opacity: 0;
+}
+
+#responseText {
+    font-size: 1.5em;
+    color: var(--color-pink);
+    transition: color 0.3s;
+}
+
+#content.fade-out {
+    opacity: 0;
 }
