@@ -27,6 +27,33 @@ document.addEventListener('DOMContentLoaded', function () {
     animationContainer.style.left = "0";
 
 
+    const animationContainer2 = document.getElementById("animationContainer2");
+
+    // Configura la animación
+    const animation2 = lottie.loadAnimation({
+        container: animationContainer2,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "./corazonanimacion.json" // Ruta a tu archivo JSON de animación descargado de LottieFiles
+    });
+
+
+
+    animation2.setSpeed(.1); // Establece la velocidad de la animación
+
+    // Haz que la animación ocupe toda la pantalla
+    animationContainer2.style.width = "100vw";
+    animationContainer2.style.height = "100vh";
+    animationContainer2.style.overflow = "hidden";
+    animationContainer2.style.position = "fixed";
+    animationContainer2.style.top = "0";
+    animationContainer2.style.left = "0";
+
+
+
+
+
     // Mostrar la pregunta con un efecto de aparición
     setTimeout(function () {
         question.classList.add('appear');
