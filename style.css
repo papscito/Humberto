@@ -2,8 +2,10 @@
 
 :root {
     --color-yellow: #fff424;
+    --color-medium-yellow: #fff889;
     --color-light-yellow: #fdfee8;
     --color-pink: #ff24b2;
+    --color-medium-pink: #ffcaf1;
     --color-light-pink: #fef1fa;
 }
 
@@ -19,12 +21,14 @@ body {
 }
 
 #content {
+    width: 100%;
+    height: 100vh;
     text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    display: none; /* Initially hidden */
+    display: none;
+    /* Initially hidden */
     opacity: 0;
-    transition: opacity 1s ease; /* Transition for opacity */
+    transition: opacity 1s ease;
+    /* Transition for opacity */
 }
 
 #content.appear {
@@ -58,21 +62,71 @@ body {
     display: none;
 }
 
-#content.appear{
+#content.appear {
     opacity: 1;
 }
 
+
+
+
+#yesBtn,
+#noBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+    font-size: 2em;
+    color: var(--color-pink);
+    background-color: var(--color-light-pink);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#yesBtn {
+    float: left;
+}
+
+#noBtn {
+    float: right;
+}
+
+#yesBtn {
+    background-color: var(--color-light-yellow);
+    color: var(--color-yellow);
+
+    transition: background-color 0.5s ease, color 0.5s ease;
+
+}
+
+#noBtn {
+    background-color: var(--color-light-pink);
+    color: var(--color-pink);
+
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#yesBtn:hover{
+    background-color: var(--color-medium-yellow);
+    color: var(--color-light-yellow);
+}
+
+#noBtn:hover{
+    background-color: var(--color-medium-pink);
+    color: var(--color-light-pink);
+}
 
 #showQuestionBtn {
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: var(--color-pink);
-    color: white;
+    color: var(--color-pink);
+    background-color: transparent;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    text-decoration: underline;
+    z-index: 1000;
     transition: background-color 0.3s;
 }
-
