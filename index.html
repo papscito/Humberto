@@ -3,16 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pregunta</title>
+    <title>Página de Preguntas</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        #question {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        #buttons {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
 </head>
 <body>
-    
-    <h1>Espacio de Pregunta ejemplo asdas asdasd asdasd adsdasd asdasd asdasd</h1>
+    <div id="content">
+        <div id="question">¿Cuál es tu pregunta?</div>
+        <div id="buttons" class="hidden">
+            <button id="yesBtn">Sí</button>
+            <button id="noBtn">No</button>
+            <button id="showQuestionBtn">Ver pregunta de nuevo</button>
+        </div>
+    </div>
 
-    <!-- Boton si/no js-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const question = document.getElementById('question');
+            const buttons = document.getElementById('buttons');
+            const showQuestionBtn = document.getElementById('showQuestionBtn');
 
-    <button onclick="myFunction()">Si</button>
-    <button onclick="myFunction()">No</button>
+            setTimeout(function() {
+                question.classList.add('hidden');
+                buttons.classList.remove('hidden');
+            }, 5000); // 5 segundos antes de ocultar la pregunta y mostrar los botones
 
+            showQuestionBtn.addEventListener('click', function() {
+                question.classList.remove('hidden');
+                buttons.classList.add('hidden');
+                setTimeout(function() {
+                    question.classList.add('hidden');
+                    buttons.classList.remove('hidden');
+                }, 5000); // 5 segundos antes de ocultar la pregunta nuevamente
+            });
+        });
+    </script>
 </body>
 </html>
