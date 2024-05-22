@@ -82,6 +82,8 @@ body {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    transition: color 0.3s;
+    transition: width 0.5s ease;
 }
 
 #yesBtn {

@@ -60,3 +60,28 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 100); // Comienza casi inmediatamente
     });
 });
+
+
+// se va a ir haciendo mas pequeño el boton no al clickearlo mientras que el si se va a ir haciendo mas grande, solo al click no
+
+
+const buttonYes = document.getElementById('yesBtn');
+const buttonNo = document.getElementById('noBtn');
+
+buttonNo.addEventListener('click', function () {
+    let noWidth = 50;
+    let yesWidth = 50;
+
+    const interval = setInterval(function () {
+        noWidth -= 10;
+        yesWidth += 10;
+
+        buttonNo.style.width = `${noWidth}%`;
+        buttonYes.style.width = `${yesWidth}%`;
+
+        if (noWidth <= 0) {
+            clearInterval(interval);
+            buttonNo.style.display = 'none'; // Ocultar el botón "No" cuando su ancho llegue a 0
+        }
+    }, 100); // Cambio cada 100ms
+});
