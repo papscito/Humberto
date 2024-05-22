@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --color-yellow: #fff424;
-    --color-medium-yellow: #fff889;
-    --color-light-yellow: #fdfee8;
-    --color-pink: #ff24b2;
-    --color-medium-pink: #ffcaf1;
-    --color-light-pink: #fef1fa;
+    --color-yellow: #9411ba;
+    --color-medium-yellow: #db6fff;
+    --color-light-yellow: #fcf3ff;
+    --color-pink: #1766de;
+    --color-medium-pink: #5bbbff;
+    --color-light-pink: #eff8ff;
 }
 
 body {
