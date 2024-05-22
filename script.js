@@ -68,20 +68,29 @@ document.addEventListener('DOMContentLoaded', function () {
 const buttonYes = document.getElementById('yesBtn');
 const buttonNo = document.getElementById('noBtn');
 
-buttonNo.addEventListener('click', function () {
-    let noWidth = 50;
-    let yesWidth = 50;
+let noWidth = 50;
+let yesWidth = 50;
 
-    const interval = setInterval(function () {
-        noWidth -= 10;
-        yesWidth += 10;
+buttonNo.addEventListener('click', function () {
+   
+       numero = Math.floor(Math.random() * 15+10);
+
+        noWidth -= numero;
+        yesWidth += numero;
 
         buttonNo.style.width = `${noWidth}%`;
         buttonYes.style.width = `${yesWidth}%`;
 
-        if (noWidth <= 0) {
-            clearInterval(interval);
+        //transition with
+
+        buttonNo.style.transition = 'width 0.5s ease';
+        buttonYes.style.transition = 'width 0.5s ease';
+
+        if (noWidth <= 8) {
             buttonNo.style.display = 'none'; // Ocultar el botón "No" cuando su ancho llegue a 0
         }
-    }, 100); // Cambio cada 100ms
-});
+
+        if (yesWidth > 100) {
+            buttonYes.style.width = `100%`;
+        }
+    });
